@@ -19,7 +19,6 @@ function addTask(taskValue) {
         <button class="deleteButton">Delete</button>
     `;
 
-    // Edit button functionality
     listItem.querySelector('.editButton').addEventListener('click', function() {
         const newTaskValue = prompt('Edit your task:', taskValue);
         if (newTaskValue) {
@@ -27,13 +26,11 @@ function addTask(taskValue) {
         }
     });
 
-    // Delete button functionality
     listItem.querySelector('.deleteButton').addEventListener('click', function() {
         taskList.removeChild(listItem);
         checkAllCompleted();
     });
 
-    // Checkbox functionality
     const checkbox = listItem.querySelector('.taskCheckbox');
     checkbox.addEventListener('change', function() {
         checkAllCompleted();
@@ -51,7 +48,6 @@ function checkAllCompleted() {
     completeAllButton.style.display = allCompleted ? 'block' : 'none';
 }
 
-// Redirect to Thank You page when Completed button is clicked
 document.getElementById('completeAllButton').addEventListener('click', function() {
     window.location.href = 'thankyou.html';
 });
